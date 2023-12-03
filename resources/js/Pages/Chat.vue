@@ -57,7 +57,7 @@ function sendMessage() {
                 <div class="flex flex-col leading-tight">
                     <div class="text-2xl mt-1 flex items-center">
                         <span class="text-gray-700 mr-3">John Doe</span>
-                    </div>
+                    </div> 
                     <span class="text-lg text-gray-600">Junior Developer</span>
                 </div>
             </div>
