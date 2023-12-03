@@ -121,7 +121,7 @@ function sendMessage() {
                 </button>
             </div>
         </div>
-        <div
+        <div 
             id="messages"
             class="space-y-4 p-3 absolute top-40 right-0 left-6 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch max-h-[calc(100vh-250px)] overlow-y-hidden "
         >
