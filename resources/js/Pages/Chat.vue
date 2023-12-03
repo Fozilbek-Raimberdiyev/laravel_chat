@@ -2,7 +2,7 @@
 import { Head } from "@inertiajs/vue3";
 import { onMounted, ref } from "vue";
 import { io } from "socket.io-client";
-const socket = io("192.168.1.45:3000");
+const socket = io(import.meta.env.VITE_WS_URL);
 const messages = ref([]);
 const message = ref("");
 socket.on("connect", () => {
