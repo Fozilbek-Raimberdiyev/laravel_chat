@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 });
 // server.address = env.VITE_WS_URL;
-server.listen(3000, () => {
+server.listen(443, () => {
     console.log("Server listening on port 3000");
     // console.log(env.VITE_WS_URL);
 });
