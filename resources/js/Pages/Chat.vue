@@ -119,7 +119,7 @@ function sendMessage() {
                         ></path>
                     </svg>
                 </button>
-            </div>
+            </div> 
         </div>
         <div 
             id="messages"
