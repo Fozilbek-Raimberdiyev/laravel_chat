@@ -20,7 +20,7 @@ io.on("connection", (socket) => {
 app.get("/", (req, res) => {
     res.send("Hello World");
 });
-server.address = "192.168.1.45";
+server.address = import.meta.env.VITE_WS_URL;
 server.listen(3000, () => {
     console.log("Server listening on port 3000");
 });
