@@ -2,7 +2,7 @@
 import { Head } from "@inertiajs/vue3";
 import { onMounted, ref } from "vue";
 import { io } from "socket.io-client";
-const socket = io('https://139.144.176.79:3000');
+const socket = io('139.144.176.79:3000');
 const messages = ref([]);
 const message = ref("");
 socket.on("connect", () => {
