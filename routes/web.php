@@ -25,7 +25,9 @@ Route::get('/', function () {
     ]);
 });
 Route::get("/chat", function () {
-    return Inertia::render("Chat");
+    return Inertia::render("Chat", [
+        'user' => Auth::user(),
+    ]);
 });
 
 Route::get('/dashboard', function () {

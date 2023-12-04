@@ -11,19 +11,15 @@ const io = new Server(server, {
     },
 });
 
-io.on("connection", (socket) => {
-    socket.on("message", (data) => {
-        io.emit("message", data);
-    });
-});
-
 app.get("/", (req, res) => {
     res.send("Hello World");
 });
 
 io.of("/ws").on("connection", (socket) => {
+    socket.on("message", (data) => {
+        io.of("/ws").emit("message", data);
+    });
     console.log(" WebSocket ulanishi o'rnatildi- true ");
-    socket.emit("message", "Hello World");
 });
 
 server.listen(3000, () => {

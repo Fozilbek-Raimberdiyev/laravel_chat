@@ -1,8 +1,10 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
+import { Head, } from "@inertiajs/vue3";
 import { onMounted, ref } from "vue";
 import { io } from "socket.io-client";
-const socket = io('http:139.144.176.79:3000/ws');
+const socket = io("ws://chat.superhost.uz:3000/ws");
+// const socket = io("ws://localhost:3000/ws");
+
 const messages = ref([]);
 const message = ref("");
 socket.on("connect", () => {
@@ -29,7 +31,6 @@ function sendMessage() {
 
 <template>
     <Head title="Dashboard" />
-
     <div
         class="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen relative"
     >
@@ -57,7 +58,7 @@ function sendMessage() {
                 <div class="flex flex-col leading-tight">
                     <div class="text-2xl mt-1 flex items-center">
                         <span class="text-gray-700 mr-3">John Doe</span>
-                    </div> 
+                    </div>
                     <span class="text-lg text-gray-600">Junior Developer</span>
                 </div>
             </div>
@@ -119,17 +120,19 @@ function sendMessage() {
                         ></path>
                     </svg>
                 </button>
-            </div> 
+            </div>
         </div>
-        <div 
+        <div
             id="messages"
-            class="space-y-4 p-3 absolute top-40 right-0 left-6 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch max-h-[calc(100vh-250px)] overlow-y-hidden "
+            class="space-y-4 p-3 absolute top-40 right-0 left-6 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch max-h-[calc(100vh-250px)] overlow-y-hidden"
         >
-            <p  v-for="(message, index) in messages" :key="index">
+            <p v-for="(message, index) in messages" :key="index">
                 {{ message }}
             </p>
         </div>
-        <div class="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0 fixed bottom-2 inset-x-0 ">
+        <div
+            class="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0 fixed bottom-2 inset-x-0"
+        >
             <div class="relative flex">
                 <span class="absolute inset-y-0 flex items-center">
                     <button
