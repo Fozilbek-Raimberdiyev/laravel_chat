@@ -2,7 +2,7 @@
 import { Head, } from "@inertiajs/vue3";
 import { onMounted, ref } from "vue";
 import { io } from "socket.io-client";
-const socket = io("ws://chat.superhost.uz:3000/ws");
+const socket = io(":3000/ws");
 // const socket = io("ws://localhost:3000/ws");
 
 const messages = ref([]);
